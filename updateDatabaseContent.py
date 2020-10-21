@@ -10,21 +10,20 @@ MongoEngine().set_database_name('hg38')
 d = {}
 for line in fileContent:
     line = line.strip().split("\t")
-    d = {
-        '_id':line[0],
-        'specie': line[1],
-        'assembly': line[2],
-        'individual': line[3],
-        'sample': line[4],
-        'context': line[5],
-        'sex': line[6],
-        'age': line[7],
-        'physiopatological_status': line[8],
-        'description': line[9],
-        'reference': line[10],
-        'biosample': line[11],
-        'srx':line[12],
-        'dump5': line[13]
-    }
-    Content().insert(d)
+    Content().insert({
+        '_id': str(line[0]),
+        'specie': str(line[1]),
+        'assembly': str(line[2]),
+        'individual': str(line[3]),
+        'sample': str(line[4]),
+        'context': str(line[5]),
+        'sex': str(line[6]),
+        'age': str(line[7]),
+        'physiopatological_status': str(line[8]),
+        'description': str(line[9]),
+        'reference': str(line[10]),
+        'biosample': str(line[11]),
+        'srx':str(line[12]),
+        'dump5': str(line[13])
+    })
 
