@@ -6,10 +6,13 @@ from base.mongo_engine import MongoEngine
 
 fileMeth = open(sys.argv[1],'r')
 sampleName = sys.argv[2]
+srx = sys.argv[3]
+protocol = sys.argv[4]
+
 context = "CG"
 
 MongoEngine().set_database_name('hg38')
-Samples().insert({'sample':sampleName, 'methylationContext' : "CG"})
+Samples().insert({'sample':sampleName, 'methylationContext' : "CG", 'srx':srx, 'protocol':protocol})
 
 for line in fileMeth:
     if "#" in line:
