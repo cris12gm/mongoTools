@@ -26,8 +26,5 @@ for line in fileContent:
         'srx':line[12],
         'dump5': line[13]
     }
-
-print (d)
-
-#Content().insert({'sample':sampleName, 'methylationContext' : "CG"})
+    Content().insert(d)
 
