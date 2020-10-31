@@ -25,7 +25,10 @@ for line in fileMeth:
     sampleValues = {sample:{"methRatio":methylation,"pScore":quality,"coverage":coverage}}
     value = {"_id":_id, "chrom":chrom, "pos":chromStart,'methylation_CG.'+individual:sampleValues}
 
-    ch = valuesByChrom[chrom] 
+    try:
+        ch = valuesByChrom[chrom] 
+    except:
+        ch = []
     ch.append(value)
     valuesByChrom[chrom] = ch
 
