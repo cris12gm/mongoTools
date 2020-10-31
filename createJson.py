@@ -4,9 +4,8 @@ import json
 fileMeth = open(sys.argv[1],'r')
 individual = sys.argv[2]
 sample = sys.argv[3]
-out = sys.argv[1]+".json"
 
-values = []
+valuesByChrom = {}
 n = 0
 for line in fileMeth:
     n = n + 1
@@ -25,8 +24,14 @@ for line in fileMeth:
     methylation = str(round((methylated/quality),2))
     sampleValues = {sample:{"methRatio":methylation,"pScore":quality,"coverage":coverage}}
     value = {"_id":_id, "chrom":chrom, "pos":chromStart,'methylation_CG.'+individual:sampleValues}
-    values.append(value)
+
+    ch = valuesByChrom[chrom] 
+    ch.append(value)
+    valuesByChrom[chrom] = ch
+
 print ("End")
 
-with open(out, 'w') as outfile:
-    json.dump(values, outfile)
+for chrom in valuesByChrom:
+    out = sys.argv[1]+"_"+chrom+".json"    
+    with open(out, 'w') as outfile:
+        json.dump(valuesByChrom[chrom], outfile)
