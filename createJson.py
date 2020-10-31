@@ -26,7 +26,7 @@ for line in fileMeth:
     sampleValues = {sample:{"methRatio":methylation,"pScore":quality,"coverage":coverage}}
     value = {"_id":_id, "chrom":chrom, "pos":chromStart,'methylation_CG.'+individual:sampleValues}
     values.append(value)
-    print ("End")
+print ("End")
 
 with open(out, 'w') as outfile:
     json.dump(values, outfile)
