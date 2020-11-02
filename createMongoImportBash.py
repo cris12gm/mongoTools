@@ -10,7 +10,7 @@ for line in fileSamples:
     for chrom in chromsAllowed:
         fname = line.strip()+"_"+chrom+".json"
         if os.path.isfile(fname):
-            escribir = "mongoimport --host localhost:8028 --db hg38 --collection "+chrom+" --file="fname+" --jsonArray --mode=merge\n"
+            escribir = "mongoimport --host localhost:8028 --db hg38 --collection "+chrom+" --file="+fname+" --jsonArray --mode=merge\n"
             fileBatch.write(escribir)
 
 fileBatch.close()
