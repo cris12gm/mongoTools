@@ -16,14 +16,15 @@ for line in fileContent:
         'assembly': str(line[2]),
         'individual': str(line[3]),
         'sample': str(line[4]),
-        'context': str(line[5]),
-        'sex': str(line[6]),
-        'age': str(line[7]),
-        'physiopatological_status': str(line[8]),
-        'description': str(line[9]),
-        'reference': str(line[10]),
-        'biosample': str(line[11]),
-        'srx':str(line[12]),
-        'dump5': str(line[13])
+        'project': str(line[5])
+        'context': str(line[6]),
+        'sex': str(line[7]),
+        'age': str(line[8]),
+        'physiopatological_status': str(line[9]),
+        'description': str(line[10]),
+        'reference': str(line[11]),
+        'biosample': str(line[12]),
+        'srx':str(line[13]),
+        'dump5': str(line[14])
     })
 
