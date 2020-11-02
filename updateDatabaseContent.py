@@ -16,7 +16,7 @@ for line in fileContent:
         'assembly': str(line[2]),
         'individual': str(line[3]),
         'sample': str(line[4]),
-        'project': str(line[5])
+        'project': str(line[5]),
         'context': str(line[6]),
         'sex': str(line[7]),
         'age': str(line[8]),
