@@ -17,8 +17,8 @@ for line in fileMeth:
     chromStart = line[1]
     _id = chrom+"_"+chromStart
     coverage = int(line[4])
-    methylation = float(line[5]/line[4])
-    sampleValues = {sample:{"methRatio":methylation,coverage":coverage}}
+    methylation = float(float(line[5])/float(line[4]))
+    sampleValues = {sample:{"methRatio":methylation,"coverage":coverage}}
     if context=="CG":
         value = {"_id":_id, "chrom":chrom, "pos":chromStart,'methylation_CG.'+individual:sampleValues}
     elif context=="CHG":
