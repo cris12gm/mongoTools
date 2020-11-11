@@ -5,7 +5,7 @@ from base.mongo_engine import MongoEngine
 
 fileContent = open(sys.argv[1],'r')
 
-MongoEngine().set_database_name('hg38')
+MongoEngine().set_database_name('databaseContent')
 
 d = {}
 for line in fileContent:
