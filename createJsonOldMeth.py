@@ -4,6 +4,7 @@ import json
 fileMeth = open(sys.argv[1],'r')
 individual = sys.argv[2]
 sample = sys.argv[3]
+context = sys.argv[4]
 
 valuesByChrom = {}
 n = 0
@@ -18,8 +19,10 @@ for line in fileMeth:
     coverage = int(line[4])
     methylation = float(line[5]/line[4]0)
     sampleValues = {sample:{"methRatio":methylation,coverage":coverage}}
-    value = {"_id":_id, "chrom":chrom, "pos":chromStart,'methylation_CG.'+individual:sampleValues}
-
+    if context=="CG":
+        value = {"_id":_id, "chrom":chrom, "pos":chromStart,'methylation_CG.'+individual:sampleValues}
+    elif context=="CHG":
+        value = {"_id":_id, "chrom":chrom, "pos":chromStart,'methylation_CHG.'+individual:sampleValues}
     try:
         ch = valuesByChrom[chrom] 
     except:
