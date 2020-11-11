@@ -10,7 +10,7 @@ valuesByChrom = {}
 n = 0
 for line in fileMeth:
     n = n + 1
-    if "#" in line:
+    if "chrom" in line:
         continue
     line = line.strip().split("\t")
     chrom = line[0]
